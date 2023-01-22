@@ -1,0 +1,14 @@
+.task-card {
+  padding-left: 10px;
+  padding-right: 15px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .task-description {
+    width: 70%;
+  }
+}

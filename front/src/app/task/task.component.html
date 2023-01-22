@@ -1,0 +1,13 @@
+<mat-card class="task-card mb-3" [formGroup]="taskForm">
+  <mat-checkbox [formControl]="taskResolved" class="task-resolved"></mat-checkbox>
+  
+  <mat-form-field class="task-description mt-4" appearance="outline">
+    <!-- <mat-label>Description</mat-label> -->
+    <input matInput [formControl]="taskDescription">
+    <mat-icon fontIcon="edit" matRipple matSuffix *ngIf="!isDescriptionEditable; else check" (click)="switchMode()"></mat-icon>
+    <ng-template #check>
+      <mat-icon fontIcon="check" matRipple matSuffix (click)="switchMode()"></mat-icon>
+    </ng-template>
+  </mat-form-field>
+  <mat-icon fontIcon="delete" matRipple (click)="deleteTask()"></mat-icon>
+</mat-card>
