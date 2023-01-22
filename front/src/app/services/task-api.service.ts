@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { ITask } from "../interfaces/task.interface";
 import { environment } from "src/environment/environment";
 import { Observable } from "rxjs";
@@ -19,7 +19,7 @@ export class TaskApiService {
   }
 
   public getTaskById(id: string): Observable<ITask> {
-    return this.httpClient.get<ITask>(`${this.apiUrl}/task/${id}`);
+    return this.httpClient.get<ITask>(`${this.apiUrl}/card/${id}`);
   }
 
   public createTask(description: string): Observable<ITask> {
@@ -27,13 +27,14 @@ export class TaskApiService {
   }
 
   public updateTask(task: ITask): Observable<ITask> {
-    return this.httpClient.put<ITask>(`${this.apiUrl}/updateTask/${task.id}`, { 
+    return this.httpClient.put<ITask>(`${this.apiUrl}/card/${task.id}`, { 
       description: task.description,
       resolved: task.resolved,
      });
   }
 
-  public deleteTask(id: string): Observable<ITask> {
-    return this.httpClient.delete<ITask>(`${this.apiUrl}/deleteTask/${id}`);
+  public deleteTask(id: string): Observable<string> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.httpClient.delete(`${this.apiUrl}/card/${id}`, { headers, responseType: "text" });
   }
 }

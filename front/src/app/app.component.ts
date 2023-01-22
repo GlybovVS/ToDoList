@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { switchMap } from 'rxjs';
-import { ITask } from 'src/app/interfaces/task.interface';
+import { ITask } from '../app/interfaces/task.interface';
 import { TaskApiService } from './services/task-api.service';
 
 @Component({

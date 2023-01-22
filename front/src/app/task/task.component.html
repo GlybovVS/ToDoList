@@ -1,5 +1,5 @@
 <mat-card class="task-card mb-3" [formGroup]="taskForm">
-  <mat-checkbox [formControl]="taskResolved" class="task-resolved"></mat-checkbox>
+  <mat-checkbox [formControl]="taskResolved" class="task-resolved" (change)="updateTask()"></mat-checkbox>
   
   <mat-form-field class="task-description mt-4" appearance="outline">
     <!-- <mat-label>Description</mat-label> -->
