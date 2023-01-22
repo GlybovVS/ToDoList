@@ -1,0 +1,14 @@
+<main class="container">
+  <section class="row mt-3">
+    <div class="col-md-12" *ngFor="let task of tasks">
+      <app-task [task]="task" (taskDeleted)="deleteTask($event)" (taskUpdated)="updateTask($event)"></app-task>
+    </div>
+  </section>
+  <section row mt-5>
+    <div class="offset-md-11 col-md-1 d-flex align-items-center justify-content-center">
+      <button mat-raised-button class="add-button" (click)="addTask()">
+        <mat-icon fontIcon="add"></mat-icon>
+      </button>
+    </div>
+  </section>
+</main>
