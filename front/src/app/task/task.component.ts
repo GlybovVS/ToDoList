@@ -52,7 +52,7 @@ export class TaskComponent {
   }
 
   public deleteTask(): void {
-    this.taskDeleted.emit(this.taskDescription.value);
+    this.taskDeleted.emit(this.task.id);
   }
 
   public updateTask(): void {
