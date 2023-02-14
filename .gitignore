@@ -1,3 +1,4 @@
 back/venv/*
 back/__pycache__/*
 pattern_practice/*
+jira_parser/*
